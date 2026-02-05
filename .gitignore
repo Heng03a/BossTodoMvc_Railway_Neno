@@ -1,0 +1,18 @@
+# .NET
+bin/
+obj/
+.vs/
+
+# Node / Frontend
+node_modules/
+.angular/
+.cache/
+.tmp/
+
+# Environment / secrets
+.env
+*.env
+
+# OS junk
+Thumbs.db
+.DS_Store
