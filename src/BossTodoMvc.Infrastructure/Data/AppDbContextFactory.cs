@@ -1,23 +1,25 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
 
-namespace BossTodoMvc.Infrastructure.Data;
-
-public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
+namespace BossTodoMvc.Infrastructure.Data
 {
-    public AppDbContext CreateDbContext(string[] args)
+    public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
     {
-        var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
+        public AppDbContext CreateDbContext(string[] args)
+        {
+            var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.Development.json", optional: false)
+                .Build();
 
-        optionsBuilder.UseNpgsql(
-         "Host=ep-dark-cake-a168liak.ap-southeast-1.aws.neon.tech;" +
-    "Port=5432;" +
-    "Database=neondb;" +
-    "Username=neondb_owner;" +
-    "Password=npg_vLKEwya1Uo5s;" +
-    "SSL Mode=Require"
-    );
+            var connectionString = config.GetConnectionString("DefaultConnection");
 
-        return new AppDbContext(optionsBuilder.Options);
+            var options = new DbContextOptionsBuilder<AppDbContext>()
+                .UseNpgsql(connectionString)
+                .Options;
+
+            return new AppDbContext(options);
+        }
     }
 }

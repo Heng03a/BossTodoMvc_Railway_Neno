@@ -7,13 +7,13 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BossTodoMvc.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Init_Postgres : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "TodoItems",
+                name: "todo_items",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -24,7 +24,7 @@ namespace BossTodoMvc.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TodoItems", x => x.Id);
+                    table.PrimaryKey("PK_todo_items", x => x.Id);
                 });
         }
 
@@ -32,7 +32,7 @@ namespace BossTodoMvc.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "TodoItems");
+                name: "todo_items");
         }
     }
 }

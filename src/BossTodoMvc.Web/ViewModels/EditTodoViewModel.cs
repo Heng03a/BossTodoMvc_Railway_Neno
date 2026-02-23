@@ -1,7 +1,13 @@
-namespace BossTodoMvc.Web.ViewModels;
+using System.ComponentModel.DataAnnotations;
 
-public class EditTodoViewModel
+namespace BossTodoMvc.Web.ViewModels
 {
-    public int Id { get; set; }
-    public string Title { get; set; } = string.Empty;
+    public class EditTodoViewModel
+    {
+        public int Id { get; set; }
+
+        [Required]
+        [StringLength(200)]
+        public string Title { get; set; } = string.Empty;
+    }
 }

@@ -1,0 +1,23 @@
+@model BossTodoMvc.Web.ViewModels.LoginViewModel
+
+<link rel="stylesheet" href="~/css/auth.css" />
+
+<div class="page-wrapper">
+    <div class="card">
+        <h2>Login</h2>
+
+        <form method="post">
+            <div class="input-group">
+                <input asp-for="Username" placeholder="Username" />
+            </div>
+
+            <div class="input-group">
+                <input asp-for="Password" type="password" placeholder="Password" />
+            </div>
+
+            <button type="submit" class="btn-primary">
+                Login
+            </button>
+        </form>
+    </div>
+</div>

@@ -3,11 +3,13 @@ using BossTodoMvc.Domain.Entities;
 
 namespace BossTodoMvc.Application.Services;
 
-public class TodoService
+public class TodoService : ITodoService
+
+
 {
     private readonly ITodoRepository _repository;
 
-    public TodoService(ITodoRepository repository)
+    public TodoService(ITodoRepository repository) // ✅ FIXED
     {
         _repository = repository;
     }

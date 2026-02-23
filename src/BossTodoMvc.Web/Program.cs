@@ -4,28 +4,76 @@ using BossTodoMvc.Application.Interfaces;
 using BossTodoMvc.Infrastructure.Repositories;
 using BossTodoMvc.Application.Services;
 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 var builder = WebApplication.CreateBuilder(args);
+var jwtSettings = builder.Configuration.GetSection("Jwt");
+var jwtKey = jwtSettings["Key"];
+
+if (string.IsNullOrWhiteSpace(jwtKey))
+{
+    throw new InvalidOperationException("JWT Key is missing. Check appsettings.Development.json");
+}
+
+var key = Encoding.UTF8.GetBytes(jwtKey);
 
 // Add DbContext to DI Container (CORE STEP)
 // DI wiring
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    var connectionString =
-        builder.Configuration.GetConnectionString("Postgres")
-        ?? Environment.GetEnvironmentVariable("DATABASE_URL");
-
-    if (string.IsNullOrWhiteSpace(connectionString))
-        throw new InvalidOperationException("DATABASE_URL is not set.");
-
-    options.UseNpgsql(connectionString);
+    var localConn = builder.Configuration.GetConnectionString("DefaultConnection");
+    options.UseNpgsql(localConn);
 });
+
+builder.Services.AddAuthentication(options =>
+{
+    // ✅ MVC uses cookies by default
+    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+})
+.AddCookie(options =>
+{
+    options.LoginPath = "/Auth/Login";
+    options.LogoutPath = "/Auth/Logout";
+    options.AccessDeniedPath = "/Auth/Login";
+})
+.AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = jwtSettings["Issuer"],
+        ValidAudience = jwtSettings["Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(key)
+    };
+
+    options.Events = new JwtBearerEvents
+    {
+        OnMessageReceived = context =>
+        {
+            context.Token = context.Request.Cookies["access_token"];
+            return Task.CompletedTask;
+        }
+    };
+});
+
+builder.Services.AddAuthorization();
 
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<ITodoRepository, TodoRepository>();
-builder.Services.AddScoped<TodoService>();
+builder.Services.AddScoped<ITodoService, TodoService>();
+builder.Services.AddScoped<AuthService>();
+
 
 var app = builder.Build();
 
@@ -37,10 +85,11 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
+app.UseAuthentication();   // 🔒 must be BEFORE UseAuthorization
 app.UseAuthorization();
 
 //app.MapStaticAssets();

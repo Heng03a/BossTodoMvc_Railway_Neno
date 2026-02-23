@@ -42,7 +42,7 @@ namespace BossTodoMvc.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TodoItems");
+                    b.ToTable("todo_items", (string)null);
                 });
 #pragma warning restore 612, 618
         }

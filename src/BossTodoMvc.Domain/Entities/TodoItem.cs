@@ -16,7 +16,7 @@ public class TodoItem
     public TodoItem(string title)
     {
         Title = title;
-        CreatedAt = DateTime.Now;
+        CreatedAt = DateTime.UtcNow;
         IsCompleted = false;
     }
 

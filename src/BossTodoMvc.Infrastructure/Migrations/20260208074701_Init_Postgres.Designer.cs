@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BossTodoMvc.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260205152720_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20260208074701_Init_Postgres")]
+    partial class Init_Postgres
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,7 +45,7 @@ namespace BossTodoMvc.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TodoItems");
+                    b.ToTable("todo_items", (string)null);
                 });
 #pragma warning restore 612, 618
         }
