@@ -14,6 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 var jwtKey = jwtSettings["Key"];
 
+// Final Version for GitHub 20260224T06_37am
+
 if (string.IsNullOrWhiteSpace(jwtKey))
 {
     throw new InvalidOperationException("JWT Key is missing. Check appsettings.Development.json");
