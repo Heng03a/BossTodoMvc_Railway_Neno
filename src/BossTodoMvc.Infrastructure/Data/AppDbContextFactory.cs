@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.Configuration;
 
 namespace BossTodoMvc.Infrastructure.Data
 {
@@ -8,18 +7,21 @@ namespace BossTodoMvc.Infrastructure.Data
     {
         public AppDbContext CreateDbContext(string[] args)
         {
-            var config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.Development.json", optional: false)
-                .Build();
+            var connectionString =
+                "Host=ep-dark-cake-a168liak.ap-southeast-1.aws.neon.tech;" +
+                "Port=5432;" +
+                "Database=neondb;" +
+                "Username=neondb_owner;" +
+                "Password=npg_Zvj4Y9xVSoCi;" +
+                "SSL Mode=Require;" +
+                "Trust Server Certificate=true";
 
-            var connectionString = config.GetConnectionString("DefaultConnection");
+            var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
 
-            var options = new DbContextOptionsBuilder<AppDbContext>()
-                .UseNpgsql(connectionString)
-                .Options;
+            optionsBuilder.UseNpgsql(connectionString,
+                x => x.MigrationsHistoryTable("__EFMigrationsHistory", "app"));
 
-            return new AppDbContext(options);
+            return new AppDbContext(optionsBuilder.Options);
         }
     }
 }
