@@ -27,8 +27,10 @@ var key = Encoding.UTF8.GetBytes(jwtKey);
 // DI wiring
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    var localConn = builder.Configuration.GetConnectionString("DefaultConnection");
-    options.UseNpgsql(localConn);
+    var conn = builder.Configuration.GetConnectionString("DefaultConnection");
+
+    options.UseNpgsql(conn, npgsqlOptions =>
+        npgsqlOptions.MigrationsHistoryTable("__EFMigrationsHistory", "app"));
 });
 
 builder.Services.AddAuthentication(options =>
