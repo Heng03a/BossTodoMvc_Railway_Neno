@@ -22,11 +22,24 @@ namespace BossTodoMvc.Web.Controllers;
             return View();
         }
 
-    [HttpPost]
-    public async Task<IActionResult> Login(LoginViewModel model)
-    {
-        if (model.Username == "boss" && model.Password == "123456")
+   [HttpPost]
+        // Phua remark on 26/2/2026
+        // This codeline ==>var isValid = _authService.ValidateCredentials(model.Username, model.Password);
+        //                  Must Match with AuthService.cs similar assignment var isValid = ... 
+        //    
+        public async Task<IActionResult> Login(LoginViewModel model)
         {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var isValid = _authService.ValidateCredentials(model.Username, model.Password);
+
+            if (!isValid)
+            {
+                ModelState.AddModelError(string.Empty, "Invalid username or password.");
+                return View(model);
+            }
+
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, model.Username)
@@ -48,19 +61,7 @@ namespace BossTodoMvc.Web.Controllers;
 
             return RedirectToAction("Index", "Todos");
         }
-
-        if (!ModelState.IsValid)
-        return View(model);
-
-        var user = await _authService.ValidateUserAsync(model);
-
-        if (user == null)
-        {
-            ModelState.AddModelError(string.Empty, "Invalid username or password.");
-            return View(model);
-        }
-    }
-
+        
             [HttpGet]
             public async Task<IActionResult> Logout()
     {
