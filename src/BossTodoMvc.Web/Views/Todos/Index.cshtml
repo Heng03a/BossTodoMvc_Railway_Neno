@@ -16,7 +16,9 @@
         <div class="top-bar">
             <form method="get">
                 <select name="sort" onchange="this.form.submit()">
-                    <option value="">Newest</option>
+                    <option value="newest" selected="@(string.IsNullOrWhiteSpace(sort) || sort=="newest")">
+                        Newest
+                    </option>
                     <option value="oldest" selected="@(sort=="oldest")">Oldest</option>
                     <option value="completed" selected="@(sort=="completed")">Completed</option>
                     <option value="active" selected="@(sort=="active")">Active</option>
