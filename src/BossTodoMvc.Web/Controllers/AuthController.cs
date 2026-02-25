@@ -49,8 +49,16 @@ namespace BossTodoMvc.Web.Controllers;
             return RedirectToAction("Index", "Todos");
         }
 
-        ViewBag.Error = "Invalid credentials";
+        if (!ModelState.IsValid)
         return View(model);
+
+        var user = await _authService.ValidateUserAsync(model);
+
+        if (user == null)
+        {
+            ModelState.AddModelError(string.Empty, "Invalid username or password.");
+            return View(model);
+        }
     }
 
             [HttpGet]

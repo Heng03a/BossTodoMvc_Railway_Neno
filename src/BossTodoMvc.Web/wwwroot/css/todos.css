@@ -157,6 +157,18 @@
 /* =========================================
    BUTTONS
 ========================================= */
+.btn-primary {
+    background: #3b82f6;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #2563eb;
+}
 
 .btn-done,
 .btn-delete {

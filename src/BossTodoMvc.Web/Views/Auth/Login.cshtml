@@ -7,12 +7,18 @@
         <h2>Login</h2>
 
         <form method="post">
+
+            <!-- ✅ Validation summary goes here -->
+            <div asp-validation-summary="All" class="validation-summary"></div>
+
             <div class="input-group">
                 <input asp-for="Username" placeholder="Username" />
+                <span asp-validation-for="Username" class="field-error"></span>
             </div>
 
             <div class="input-group">
                 <input asp-for="Password" type="password" placeholder="Password" />
+                <span asp-validation-for="Password" class="field-error"></span>
             </div>
 
             <button type="submit" class="btn-primary">
