@@ -16,9 +16,7 @@ public class TodoRepository : ITodoRepository
 
     public async Task<List<TodoItem>> GetAllAsync()
     {
-        return await _context.TodoItems
-            .OrderByDescending(t => t.CreatedAt)
-            .ToListAsync();
+        return await _context.TodoItems.ToListAsync();
     }
 
     public async Task<TodoItem?> GetByIdAsync(int id)
