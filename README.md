@@ -65,7 +65,7 @@ No business logic leaks into repository.
 
 ---
 
-### What Project demostrates
+### What Project demonstrates
 
 This project demonstrates:
 
