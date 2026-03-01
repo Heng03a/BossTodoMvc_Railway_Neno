@@ -134,3 +134,31 @@ This project demonstrates:
 
 * Clean separation of concerns
     
+## 🚀 Future Enhancements (Planned)
+
+* Containerization via Docker
+* Structured logging (Serilog)
+* Unit testing of Service layer
+* Role-based authorization
+* API version (REST endpoint exposure)
+* Azure or Render deployment comparison
+
+## 📎 Live Demo
+
+Production Deployment:
+👉 [https://bosstodomvcrailwayneno-production.up.railway.app](https://bosstodomvcrailwayneno-production.up.railway.app)
+
+---
+
+# 🔷 Why This Project Matters
+
+BossTodoMvc is not a tutorial CRUD application.
+
+It is intentionally designed to reflect:
+
+* Enterprise layering discipline
+* Service-oriented business logic
+* Cloud-hosted database architecture
+* Deployment validation practices
+
+It represents real-world backend engineering structure.
