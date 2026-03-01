@@ -75,4 +75,4 @@ This project demonstrates:
 * Clean separation of concerns
     
 * Clean separation of concerns
-* d-level to senior-level architecture awareness
+
