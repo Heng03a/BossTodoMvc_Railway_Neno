@@ -110,6 +110,14 @@ All deployments validated using:
 ```
   dotnet publish -c Release
 
+## 🎨 UI & UX
+
+* Responsive card-based layout
+* Clear task state indicators
+* Visual grouping via status dot
+* Consistent button styling
+* Server-driven state refresh (no JS framework dependency)
+
 ### What Project demonstrates
 
 This project demonstrates:
