@@ -74,5 +74,3 @@ This project demonstrates:
 * DevOps awareness
 * Clean separation of concerns
     
-* Clean separation of concerns
-
