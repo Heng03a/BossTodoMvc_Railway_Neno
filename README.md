@@ -134,7 +134,6 @@ This project demonstrates:
 
 * Clean separation of concerns
 
-
 ## 📱 Responsive & Cross-Browser Validation
 * Mobile-first  UI design layout
 
@@ -205,6 +204,7 @@ The layout maintains structural integrity across device sizes.
 
 ### Firefox
 ![Firefox Screenshot](docs/proof/cross-browser/Firefox.png)
+
     
 ## 🚀 Future Enhancements (Planned)
 
