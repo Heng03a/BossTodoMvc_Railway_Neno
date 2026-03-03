@@ -146,7 +146,7 @@ This project demonstrates:
 ## 📎 Live Demo
 
 Production Deployment:
-👉 [https://bosstodomvcrailwayneno-production.up.railway.app](https://bosstodomvcrailwayneno-production.up.railway.app)
+👉 [https://bosstodomvcrailwayneno-production.up.railway.app] https://bosstodomvcrailwayneno-production.up.railway.app
 
 ---
 
