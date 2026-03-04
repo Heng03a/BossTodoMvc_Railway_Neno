@@ -65,8 +65,6 @@ This showcase highlights:
 * CI/CD deployment via Railway
 * Responsive UI design
 
----
-
 ### Key Engineering Decisions
 
 * Sorting logic controlled at service layer (not repository).
@@ -109,7 +107,7 @@ This showcase highlights:
 All deployments validated using:
 ```
   dotnet publish -c Release
-
+```
 ## 🎨 UI & UX
 
 * Responsive card-based layout
@@ -150,6 +148,7 @@ This project demonstrates:
 
 ### Mobile View
 ![Mobile Screenshot](docs/proof/Responsive/Mobile.png)
+
 
 ## 📱 Responsive Design Implementation
 - This application was built using a mobile-first design philosophy.
