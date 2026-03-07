@@ -1,8 +1,11 @@
 ## 🟦 BossTodoMvc — Clean Architecture ASP.NET Core 8 Showcase
 
-### Overview
+### Project Overview
 
 BossTodoMvc is a production-ready ASP.NET Core 8 MVC application designed to demonstrate clean architecture principles, layered separation of concerns, and server-side business logic orchestration, domain-driven design principles, and cloud-ready deployment practices
+
+The application supports task management with responsive UI design
+and has been validated across multiple browsers.
 
 The project showcases enterprise-ready patterns including:
 
@@ -17,10 +20,81 @@ The project showcases enterprise-ready patterns including:
 This project is intentionally structured to reflect real-world enterprise web application architecture.
 
 ---
+## 📎 Live Demo
 
-### Architecture
+Production Deployment:
+👉 [https://bosstodomvcrailwayneno-production.up.railway.app] URL : https://bosstodomvcrailwayneno-production.up.railway.app
 
-Layered design:
+## 📂 Repository
+* 🔗 **GitHub Repository :** https://github.com/Heng03a/BossTodoMvc_Railway_Neno/#-bosstodomvc--clean-architecture-aspnet-core-8-showcase
+
+## 🛠 Tech Stack
+
+### Frontend
+
+* Angular
+* TypeScript
+* RxJS
+* Responsive CSS (Flexbox)
+
+### Backend
+
+* Node.js
+* Express.js
+* RESTful API design
+
+### Database
+
+* MongoDB Atlas (Cloud-hosted NoSQL database)
+
+### Authentication
+
+* JWT (JSON Web Token)
+* Stateless session management
+
+### Deployment
+
+* Vercel (Frontend)
+* Railway (Backend)
+* Distributed cloud architecture
+
+## ✨ Core/Key Features
+
+* Secure user authentication (JWT-based login/register)
+* JWT-based authorization via HTTP headers
+* RESTful API with structured routing
+* Full CRUD task management
+* Real-time UI updates
+* Task filtering & sorting logic
+* Responsive mobile-first layout
+* Cross-origin secured communication
+* Modular and clean project folder structure for maintainability
+
+## 🧠 Architecture / Logic Design
+- Authentication: JWT (JSON Web Token)
+- Deployment: Vercel (Frontend), Railway (Backend)
+- Architecture Pattern: Distributed Client-Server Architecture
+
+## 🏗 Architecture Overview
+Architecture Overview
+User Browser
+      │
+      ▼
+ASP.NET Core MVC Web Application
+      │
+      │ Application Services
+      ▼
+Domain Layer
+Business Rules
+      │
+      ▼
+Infrastructure Layer
+Repository Pattern
+      │
+      ▼
+PostgreSQL Database
+
+Architecture Layered design:
 
 * Domain Layer
   Encapsulated entities with behavior methods (ToggleComplete, UpdateTitle).
@@ -52,7 +126,8 @@ Layered design:
 
 No business logic leaks into repository.
 
-The project intentionally separates concerns across Domain, Application, Infrastructure, and Web layers to reflect real-world enterprise web application architecture.
+The project intentionally separates concerns across Domain, Application, Infrastructure, and Web layers to reflect real-world enterprise web application architecture. 
+This architecture demonstrates clean layering and separation of responsibilities.
 
 This showcase highlights:
 
@@ -84,6 +159,7 @@ This showcase highlights:
   ```
   
   This demonstrates server-side orchestration and predictable routing behavior.
+
 
 ### Authentication & Security
 
@@ -214,11 +290,6 @@ The layout maintains structural integrity across device sizes.
 * API version (REST endpoint exposure)
 * Azure or Render deployment comparison
 
-## 📎 Live Demo
-
-Production Deployment:
-👉 [https://bosstodomvcrailwayneno-production.up.railway.app] URL : https://bosstodomvcrailwayneno-production.up.railway.app
-
 ---
 
 # 🔷 Why This Project Matters
@@ -233,3 +304,12 @@ It is intentionally designed to reflect:
 * Deployment validation practices
 
 It represents real-world backend engineering structure.
+
+## Application Built and maintained by :-
+
+Jialumen (Phua Kia Heng)
+
+Full Stack Web Developer
+Singapore
+
+GitHub: https://github.com/Heng03a
