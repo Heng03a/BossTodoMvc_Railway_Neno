@@ -32,48 +32,44 @@ Production Deployment:
 
 ### Frontend
 
-* Angular
-* TypeScript
-* RxJS
+* .NET Core 8.0 MVC
 * Responsive CSS (Flexbox)
+* Boss please Elevate
 
 ### Backend
 
-* Node.js
-* Express.js
-* RESTful API design
+* EF Entity
+* Boss please Elevate
 
 ### Database
 
-* MongoDB Atlas (Cloud-hosted NoSQL database)
+* PostgreSQLDB (Cloud-hosted Neon)
 
 ### Authentication
 
-* JWT (JSON Web Token)
-* Stateless session management
+* Boss please Elevate
 
 ### Deployment
 
-* Vercel (Frontend)
-* Railway (Backend)
-* Distributed cloud architecture
+* Railway (Frontend)
+* Neon PostgreSQLDB (Backend Database)
+* Boss please Elevate
 
 ## ✨ Core/Key Features
 
-* Secure user authentication (JWT-based login/register)
-* JWT-based authorization via HTTP headers
-* RESTful API with structured routing
+* Secure user authentication (Boss please Elevate - login/register)
 * Full CRUD task management
 * Real-time UI updates
 * Task filtering & sorting logic
 * Responsive mobile-first layout
 * Cross-origin secured communication
 * Modular and clean project folder structure for maintainability
+* Boss please Elevate
 
 ## 🧠 Architecture / Logic Design
-- Authentication: JWT (JSON Web Token)
-- Deployment: Vercel (Frontend), Railway (Backend)
-- Architecture Pattern: Distributed Client-Server Architecture
+- Authentication: Boss Please Elevate
+- Deployment: Railway (Frontend), Neon (Backend)
+- Architecture Pattern: Layered Architecture
 
 ## 🏗 Architecture Overview
 Architecture Overview
@@ -92,7 +88,7 @@ Infrastructure Layer
 Repository Pattern
       │
       ▼
-PostgreSQL Database
+PostgreSQL Database (Neon)
 
 Architecture Layered design:
 
@@ -140,7 +136,7 @@ This showcase highlights:
 * CI/CD deployment via Railway
 * Responsive UI design
 
-### Key Engineering Decisions
+### Key Engineering Decisions - Engineering Principles Applied
 
 * Sorting logic controlled at service layer (not repository).
 * Repository returns raw dataset (no enforced ordering).
@@ -280,7 +276,37 @@ The layout maintains structural integrity across device sizes.
 ### Firefox
 ![Firefox Screenshot](docs/proof/cross-browser/Firefox.png)
 
-    
+## Deployment Details - ☁️ Cloud Deployment & CI/CD
+Deployment Flow
+* Local development
+* git add, git commit, git push
+* Railway auto-build triggered
+* Backend auto-deployed - Neon
+* Production URL updated
+- No manual server management required.
+* Production Characteristics
+* Always available (24/7)
+* Serverless frontend hosting
+* Managed backend runtime -‭ Neon
+* Managed database - Neon
+* Automatic build pipeline
+
+### ▶️ Run Locally
+* Frontend
+* dotnet run --project src/BossTodoMvc.Web
+* npm install 
+* Access:
+* http://localhost:5288/Auth/Login
+	Access :-
+	http://localhost:5288
+	* Redirect to `/Auth/Login`
+	* After login → `/Todos/Index`http://localhost:5288
+
+### 📎 Run Live
+	Production Deployment:
+	👉 [https://bosstodomvcrailwayneno-production.up.railway.app] URL : https://bosstodomvcrailwayneno-production.up.railway.app
+
+
 ## 🚀 Future Enhancements (Planned)
 
 * Containerization via Docker
