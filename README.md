@@ -32,13 +32,15 @@ Production Deployment:
 
 ### Frontend
 
-* .NET Core 8.0 MVC
+* .NET Core 8.0 MVC Controllers
+* Razor Views
 * Responsive CSS (Flexbox)
 * Boss please Elevate
 
 ### Backend
 
 * EF Entity
+* EF Core Repository + Service pattern
 * Boss please Elevate
 
 ### Database
@@ -46,7 +48,7 @@ Production Deployment:
 * PostgreSQLDB (Cloud-hosted Neon)
 
 ### Authentication
-
+* Cookie Authentication
 * Boss please Elevate
 
 ### Deployment
