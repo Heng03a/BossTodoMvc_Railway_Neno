@@ -269,14 +269,10 @@ The layout maintains structural integrity across device sizes.
 -All layout and interactive functionality are working consistently across modern browsers.
 
 ## 📱 Cross-browser Reliability Proof
-### Google Chrome
-![Google Chrome Screenshot](docs/proof/cross-browser/Google_Chrome.png)
 
-### Microsoft Edge
-![Microsoft Edge Screenshot](docs/proof/cross-browser/Microsoft_Edge.png)
-
-### Firefox
-![Firefox Screenshot](docs/proof/cross-browser/Firefox.png)
+| Google Chrome | Microsoft Edge | Firefox |
+|---------------|----------------|---------|
+| ![Google Chrome Screenshot](docs/proof/cross-browser/Google_chrome.png) | ![Microsoft Edge Screenshot](docs/proof/cross-browser/Microsoft_edge.png) | ![Firefox Screenshot](docs/proof/cross-browser/Firefox.png) |
 
 ## Deployment Details - ☁️ Cloud Deployment & CI/CD
 Deployment Flow
