@@ -75,29 +75,29 @@ Production Deployment:
 
 ## 🏗 Architecture Overview
 Architecture Overview
-User Browser
+- User Browser
       │
       ▼
-ASP.NET Core MVC Web Application
+- ASP.NET Core MVC Web Application
       │
       │ Application Services
       ▼
-Domain Layer
-Business Rules
+- Domain  
+- Business Rules
       │
       ▼
-Infrastructure Layer
-Repository Pattern
+- Infrastructure Layer
+- Repository Pattern
       │
       ▼
-PostgreSQL Database (Neon)
+- PostgreSQL Database (Neon)
 
-Architecture Layered design:
+- Architecture Layered design:
 
 * Domain Layer
-  Encapsulated entities with behavior methods (ToggleComplete, UpdateTitle).
-  Read-only properties
-  State transitions via domain methods:
+  - Encapsulated entities with behavior methods (ToggleComplete, UpdateTitle).
+  - Read-only properties
+  - State transitions via domain methods:
 
   * `ToggleComplete()`
   * `UpdateTitle()`
@@ -260,13 +260,13 @@ The layout maintains structural integrity across device sizes.
 
 ## 🌐 Cross-Browser Compatibility
 
--Tested on:
+Tested on:
 
 - Google Chrome (latest)
 - Microsoft Edge (latest)
 - Firefox (latest)
 
--All layout and interactive functionality are working consistently across modern browsers.
+All layout and interactive functionality are working consistently across modern browsers.
 
 ## 📱 Cross-browser Reliability Proof
 
