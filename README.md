@@ -138,7 +138,7 @@ This showcase highlights:
 * CI/CD deployment via Railway
 * Responsive UI design
 
-### Key Engineering Decisions - Engineering Principles Applied
+## Engineering Principles Applied - Key Engineering Decisions
 
 * Sorting logic controlled at service layer (not repository).
 * Repository returns raw dataset (no enforced ordering).
@@ -168,20 +168,10 @@ This showcase highlights:
 * Authorization attribute on controller
 ---
 
-### ☁ Deployment Architecture
+## Reusable Application Template Architecture
 
-* Hosted on Railway
-* PostgreSQL on Neon
-* GitHub → CI/CD auto-deploy
-* Release-mode publish verified before deployment
-* Deployment Flow:
-  ```
-  Git Push → Railway Auto Build → Docker Publish (Release Mode) → Live Deployment
-  ```
-All deployments validated using:
-```
-  dotnet publish -c Release
-```
+## Challenges & Solutions
+
 ## 🎨 UI & UX
 
 * Responsive card-based layout
@@ -190,7 +180,7 @@ All deployments validated using:
 * Consistent button styling
 * Server-driven state refresh (no JS framework dependency)
 
-### What Project demonstrates
+### What this Project demonstrates
 
 This project demonstrates:
 
@@ -224,7 +214,7 @@ This project demonstrates:
 ![Mobile Screenshot](docs/proof/Responsive/Mobile.png)
 
 
-## 📱 Responsive Design Implementation
+## 📱 Responsive Design Strategy and Implementation
 - This application was built using a mobile-first design philosophy.
 - Core Responsive Characteristics
 * Flexible layout containers
@@ -274,8 +264,15 @@ All layout and interactive functionality are working consistently across modern 
 |---------------|----------------|---------|
 | ![Google Chrome Screenshot](docs/proof/cross-browser/Google_chrome.png) | ![Microsoft Edge Screenshot](docs/proof/cross-browser/Microsoft_edge.png) | ![Firefox Screenshot](docs/proof/cross-browser/Firefox.png) |
 
+
+## ☁ Deployment Architecture
+
+* Hosted on Railway
+* PostgreSQL on Neon
+* GitHub → CI/CD auto-deploy
+* Release-mode publish verified before deployment
 ## Deployment Details - ☁️ Cloud Deployment & CI/CD
-Deployment Flow
+Deployment Details
 * Local development
 * git add, git commit, git push
 * Railway auto-build triggered
@@ -288,6 +285,15 @@ Deployment Flow
 * Managed backend runtime -‭ Neon
 * Managed database - Neon
 * Automatic build pipeline
+
+* Deployment Flow:
+  ```
+  Git Push → Railway Auto Build → Docker Publish (Release Mode) → Live Deployment
+  ```
+All deployments validated using:
+```
+  dotnet publish -c Release
+```
 
 ### ▶️ Run Locally
 * Frontend
