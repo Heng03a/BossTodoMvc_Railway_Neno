@@ -113,14 +113,14 @@ Architecture Overview
 * No data access logic inside services
 
 * Infrastructure Layer
-  EF Core repository implementation with PostgreSQL (Neon cloud).
-  Repository pattern (`ITodoRepository`)
-  No business logic leakage
+* EF Core repository implementation with PostgreSQL (Neon cloud).
+* Repository pattern (`ITodoRepository`)
+* No business logic leakage
 
 * Web Layer
-  MVC Controllers, Razor Views, Cookie Authentication.
-  Model validation & user feedback
-  Query-string driven sorting (`?sort=completed`, etc.)
+* MVC Controllers, Razor Views, Cookie Authentication.
+* Model validation & user feedback
+* Query-string driven sorting (`?sort=completed`, etc.)
 
 No business logic leaks into repository.
 
