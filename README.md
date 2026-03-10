@@ -199,21 +199,6 @@ This project demonstrates:
 ## 📱 Responsive & Cross-Browser Validation
 * Mobile-first  UI design layout
 
-## 📱 Responsive Design Proof
-- Tested on Chrome, Edge, Firefox
-- Flexbox-based layout
-- Overcome Responsive container constraints
-
-### Desktop View
-![Desktop Screenshot](docs/proof/Responsive/Desktop.png)
-
-### Tablet View
-![Tablet Screenshot](docs/proof/Responsive/Tablet.png)
-
-### Mobile View
-![Mobile Screenshot](docs/proof/Responsive/Mobile.png)
-
-
 ## 📱 Responsive Design Strategy and Implementation
 - This application was built using a mobile-first design philosophy.
 - Core Responsive Characteristics
@@ -247,6 +232,21 @@ The layout maintains structural integrity across device sizes.
 * Stable button alignment
 * Clear visual hierarchy
 * Clean typography and spacing
+
+
+## 📱 Responsive Design Proof
+- Tested on Chrome, Edge, Firefox
+- Flexbox-based layout
+- Overcome Responsive container constraints
+
+### Desktop View
+![Desktop Screenshot](docs/proof/Responsive/Desktop.png)
+
+### Tablet View
+![Tablet Screenshot](docs/proof/Responsive/Tablet.png)
+
+### Mobile View
+![Mobile Screenshot](docs/proof/Responsive/Mobile.png)
 
 ## 🌐 Cross-Browser Compatibility
 
