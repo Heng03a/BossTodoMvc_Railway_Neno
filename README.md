@@ -68,6 +68,25 @@ Production Deployment:
 * Modular and clean project folder structure for maintainability
 * Boss please Elevate
 
+
+## 📸 Screenshots - ✨ Key Functional Features
+
+**Add Task**  
+![Add Task](screenshots/add-task.png)
+
+**Task Completed**  
+![Task Completed](screenshots/task-complete.png)
+
+
+**Sort Completed Task First**  
+![Clear Completed Task](screenshots/sort_completed_first.png)
+
+**Delete task**  
+![Clear Completed Task](screenshots/delete-task.png)
+
+---
+
+
 ## 🧠 Architecture / Logic Design
 - Authentication: Boss Please Elevate
 - Deployment: Railway (Frontend), Neon (Backend)
@@ -75,11 +94,11 @@ Production Deployment:
 
 ## 🏗 Architecture Overview
 Architecture Overview
-- User Browser
--     │
--     ▼
-- ASP.NET Core MVC Web Application
--     │
+-<p> User Browser</p>
+-<p>  │           </p>
+-<p>  ▼           </p>
+- <p>ASP.NET Core MVC Web Application</p>
+-<p>     │
 -     │ Application Services
 -     ▼
 - Domain  
